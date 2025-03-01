@@ -1,3 +1,4 @@
+{% load static%}
 <table class='table table-bordered'>
     <thead>
         <tr>
@@ -10,12 +11,12 @@
 
     <tbody>
     {% for i in aluno%}
-    <tr>
-    <td> {{i.id}} </td>
+    <tr id="aluno-{{i.id}}">
+    <td > {{i.id}} </td>
     <td> {{i.nome}} </td>
     <td> {{i.email}} </td>
     <td>
-        <button class="btn btn-danger">Deletar</button>
+        <button class="btn btn-danger" onclick="deletar({{i.id}})">Deletar</button>
         <button class="btn btn-primary">Editar</button>
     </td>
     </tr>
@@ -23,5 +24,6 @@
 
 
     </tbody>
-
 </table>
+
+<script src="{% static 'js/listarAlunos.js'%}"></script>
