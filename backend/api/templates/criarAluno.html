@@ -1,4 +1,8 @@
+{% extends "base.html"%}
 {% load static %}
+
+
+{% block content%}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +15,7 @@
 <body>
     <form action="POST" id='alunoForm' >
         <input type="text" placeholder="Nome" id='nome'>
-        <input type="email" placeholder="Email" id='email'>
+        <input type="password" placeholder="Senha" id='senha'>
         <button type="submit">Cadastrar</button>
     </form>
 
@@ -22,3 +26,5 @@
     <script src="{% static 'js/cadastrar.js' %}"></script>
 </body>
 </html>
+
+{% endblock %}
