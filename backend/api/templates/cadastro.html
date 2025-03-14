@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Página Cadastro{% endblock %}
+
+{% block content %}
+
+<div>
+    <form id="cadastroForm">
+        {% csrf_token %}
+            
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+           
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" required>
+        
+        <button type="submit">Cadastrar</button>
+
+    </form>
+</div>
+
+<p id='msg'></p>
+
+<script src="{% static 'js/cadastro.js' %}"></script>
+
+
+
+
+{% endblock %}

@@ -11,5 +11,5 @@ urlpatterns = [
     path('home/', home, name="home"),
     path('criarAluno/', criarAluno, name="criarAluno"),
     path('login/', login, name='login'),
-    
+    path('cadastro/', cadastro, name='cadastro'),
 ]
