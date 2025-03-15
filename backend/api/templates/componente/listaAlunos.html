@@ -1,4 +1,5 @@
 {% load static%}
+{% csrf_token %}
 <table class='table table-bordered'>
     <thead>
         <tr>
@@ -17,7 +18,7 @@
     <td> {{i.password}} </td>
     <td>
         <button class="btn btn-danger" onclick="deletar({{i.id}})">Deletar</button>
-        <button class="btn btn-primary" onclick="editar({{i.id}})">Editar</button>
+        <button class="btn btn-primary"> <a href="/cadastro/{{i.id}}">Editar</a></button>
     </td>
     </tr>
     {% endfor%}

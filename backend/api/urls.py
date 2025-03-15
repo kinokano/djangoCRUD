@@ -9,7 +9,7 @@ urlpatterns = [
     path('api/user/<int:id>', User.as_view(), name="usuarioDetalhe"),
     path('api/login/', Login.as_view(), name='loginAPI'),
     path('home/', home, name="home"),
-    path('criarAluno/', criarAluno, name="criarAluno"),
     path('login/', login, name='login'),
     path('cadastro/', cadastro, name='cadastro'),
+    path('cadastro/<int:id>', cadastro, name='cadastroEdicao')
 ]

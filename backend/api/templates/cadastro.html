@@ -6,16 +6,24 @@
 {% block content %}
 
 <div>
+    
     <form id="cadastroForm">
         {% csrf_token %}
             
         <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required>
+        <input type="text" id="nome" name="nome" required value={% if aluno %} {{aluno.username}} {% endif %}>
            
         <label for="senha">Senha:</label>
-        <input type="password" id="senha" name="senha" required>
+        <input type="password" id="senha" name="senha" required value={% if aluno %} {{aluno.password}} {% endif %}>
         
-        <button type="submit">Cadastrar</button>
+        <button type="submit">
+            {% if aluno %}
+                Editar
+            {% else %}
+                Cadastrar  
+            {% endif %}
+                       
+        </button>
 
     </form>
 </div>

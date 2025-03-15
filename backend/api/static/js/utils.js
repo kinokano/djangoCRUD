@@ -8,6 +8,10 @@ async function apiRequest(url, method = 'GET', body = null, headers = {}) {
             },
         };
 
+        // if(method != 'GET'){
+            
+        // }
+
         if (body) {
             config.body = JSON.stringify(body);
         }

@@ -1,10 +1,9 @@
 
 async function deletar(id){
+    const csrf = document.querySelector("[name=csrfmiddlewaretoken]").value
+    const resposta = await apiRequest(`/api/user/${id}`, "DELETE",null, { "X-CSRFToken": csrf })
 
-    const resposta = await fetch(`/api/user/${id}`, {
-        method:'DELETE'
-    })
-    if(resposta.ok){
+    if(resposta.status == 200){
         var linhaAluno = document.getElementById(`user-${id}`)
         linhaAluno.remove()
     }
@@ -12,5 +11,8 @@ async function deletar(id){
 }
 
 function editar(id){
-    window.location.href = "/criarAluno/"+id
+    window.location.href = "/cadastro/"+id
 }
+
+
+
