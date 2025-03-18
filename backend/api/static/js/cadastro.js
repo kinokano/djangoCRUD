@@ -2,19 +2,19 @@ async function Cadastro(event) {
     event.preventDefault();
     const nome = document.getElementById("nome").value;
     const senha = document.getElementById("senha").value;
-    const csrf = document.querySelector("[name=csrfmiddlewaretoken]").value
+    // const csrf = document.querySelector("[name=csrfmiddlewaretoken]").value
     const url = window.location.pathname
     const parts = url.split("/")
     const id = parts[parts.length - 1]
     let response
 
     if(id){
-        response = await apiRequest(`/api/user/${id}`, "PUT", { nome: nome, senha: senha }, { "X-CSRFToken": csrf })
+        response = await apiRequest(`/api/user/${id}`, "PUT", { username: nome, password: senha })
         console.log(response.status)
     }
     else{
 
-    response = await apiRequest("/api/user/", "POST", { nome: nome, senha: senha }, { "X-CSRFToken": csrf })
+    response = await apiRequest("/api/user/", "POST", { nome: nome, senha: senha })
 
 
 

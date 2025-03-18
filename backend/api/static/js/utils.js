@@ -8,9 +8,10 @@ async function apiRequest(url, method = 'GET', body = null, headers = {}) {
             },
         };
 
-        // if(method != 'GET'){
-            
-        // }
+        if(method != 'GET'){
+            const csrf = document.querySelector("[name=csrfmiddlewaretoken]").value
+            config.headers["X-CSRFToken"] = csrf
+        }
 
         if (body) {
             config.body = JSON.stringify(body);
